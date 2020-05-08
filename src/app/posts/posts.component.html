@@ -1,0 +1,9 @@
+<div *ngIf="postsLoading">
+  Ładowanie c:
+</div>
+<div *ngIf="!postsLoading">
+  <div *ngFor="let post of wordpressPosts.posts">
+    <span [innerHTML]="post.excerpt">
+    </span>
+  </div>
+</div>
