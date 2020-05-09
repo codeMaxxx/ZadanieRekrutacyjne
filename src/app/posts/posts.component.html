@@ -17,10 +17,10 @@
   </div>
   <div *ngIf="!postsLoading">
     <div class="row">
-      <div *ngFor="let post of wordpressPosts.posts" class="col-md-6 post offset-md-3">
-        <img class="post-thumbnail" src="{{post.post_thumbnail.URL}}" alt="">
-        <h4 class="m-2">{{post.title}}</h4>
-        <span [innerHTML]="post.excerpt"></span>
+      <div *ngFor="let post of wordpressPosts.posts" class="col-md-6 post offset-md-3" (click)="getSinglePost">
+          <img class="post-thumbnail" src="{{post.featured_image}}" alt="">
+          <h4 class="m-2">{{post.title}}</h4>
+          <span [innerHTML]="post.excerpt"></span>
       </div>
     </div>
   </div>

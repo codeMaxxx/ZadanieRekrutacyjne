@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
+import {SinglePostComponent} from '../single-post/single-post.component';
 
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
-  styleUrls: ['./posts.component.css']
+  styleUrls: ['./posts.component.css'],
+  providers: [SinglePostComponent]
 })
 export class PostsComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, public singlePost: SinglePostComponent) { }
     postsLoading = true;
     wordpressPosts: any;
     error: boolean;
@@ -23,6 +25,11 @@ export class PostsComponent implements OnInit {
             error: () => this.error = true
         });
     }
+
+    getSinglePost(postId) {
+        this.singlePost.getPost(postId);
+    }
+
 
   ngOnInit() {
         this.getWPPosts();
