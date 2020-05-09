@@ -4,6 +4,7 @@
       <div class="col-md-12 m-4">
         <h2>{{activePostData.title}}</h2>
         <small class="float-left">{{activePostData.date | date}}</small>
+        <button class="float-right btn btn-primary" routerLink="/posts">Back to posts</button>
       </div>
       <div class="col-md-12 post-content">
         <p [innerHTML]="activePostData.content"></p>
@@ -13,9 +14,12 @@
       <div class="col-md-12">
         <h4 class="float-left">Comments</h4>
       </div>
-      <div class="col-md-11 comment text-left">
-        <h4>Nazwa użytkownika</h4>
-        <p>Kontent</p>
+      <div class="col-md-11 text-left">
+        <div *ngFor="let comment of comments.comments" class="comment m-2 p-3">
+          <h4>{{comment.author.name}}</h4>
+          <div [innerHTML]="comment.content"></div>
+          <small class="float-right m-1">{{comment.date | date}}</small>
+        </div>
       </div>
     </div>
   </div>

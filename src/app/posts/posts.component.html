@@ -2,8 +2,7 @@
   <div class="container text-center">
     <div class="row">
       <div class="col-md-12">
-        <h2>Zadanie rekrutacyjne dla Akquinet</h2>
-        <small>Maksymilian Blok</small>
+        <h2>Zadanie rekrutacyjne dla Akquinet - <small>Maksymilian Blok</small></h2>
       </div>
     </div>
     <div class="row m-2">
@@ -19,11 +18,12 @@
       Wystąpił błąd podczas pobierania danych
     </div>
     <div *ngIf="!postsLoading">
-      <div class="row" *ngFor="let post of wordpressPosts.posts" routerLink="/post/{{post.ID}}">
+      <div class="row" *ngFor="let post of wordpressPosts.posts">
           <div class="col-md-8 post offset-md-2">
             <img class="post-thumbnail m-1" src="{{post.featured_image}}" alt="">
             <h4 class="m-2">{{post.title}}</h4>
             <span [innerHTML]="post.excerpt"></span>
+            <button class="btn btn-primary m-2" routerLink="/post/{{post.ID}}">Read more</button>
           </div>
       </div>
     </div>

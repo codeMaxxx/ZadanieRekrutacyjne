@@ -24,14 +24,15 @@ export class SinglePostComponent implements OnInit {
     });
   }
 
-  // getPostComment(id) {
-  //   this.http.get(`https://public-api.wordpress.com/rest/v1.1/sites/en.blog.wordpress.com/comments/${id}`, {}).subscribe({
-  //     next: data => {
-  //       console.log(data);
-  //       this.comments = data;
-  //     },
-  //   });
-  // }
+  getPostComment(id) {
+    this.http.get(`https://public-api.wordpress.com/rest/v1/sites/en.blog.wordpress.com/comments?post=${id}`, {}).subscribe({
+      next: data => {
+        console.log('comments');
+        console.log(data);
+        this.comments = data;
+      },
+    });
+  }
 
 
 
@@ -41,7 +42,7 @@ export class SinglePostComponent implements OnInit {
       this.id = params['id'];
     });
     this.getPost(this.id);
-    // this.getPostComment(this.id);
+    this.getPostComment(this.id);
   }
 
 }

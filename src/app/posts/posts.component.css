@@ -7,9 +7,6 @@
 .post-thumbnail {
   height: 200px;
 }
-.post {
-  border: 1px solid #5AB9EA;
-}
 .post img {
   max-width: 100%;
 }
