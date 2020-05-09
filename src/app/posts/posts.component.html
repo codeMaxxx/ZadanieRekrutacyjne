@@ -1,9 +1,27 @@
-<div *ngIf="postsLoading">
-  Ładowanie c:
-</div>
-<div *ngIf="!postsLoading">
-  <div *ngFor="let post of wordpressPosts.posts">
-    <span [innerHTML]="post.excerpt">
-    </span>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Zadanie rekrutacyjne dla Akquinet</h2>
+      <small>Maksymilian Blok</small>
+    </div>
+  </div>
+  <div class="row m-2">
+    <div class="col-md-12">
+      <h3>Aktualne posty na stronie <a href="https://wordpress.com/blog/">wordpress.com</a></h3>
+    </div>
+  </div>
+
+  <div *ngIf="postsLoading">
+    Ładowanie
+  </div>
+  <div *ngIf="!postsLoading">
+    <div class="row">
+      <div *ngFor="let post of wordpressPosts.posts" class="col-md-6 post offset-md-3">
+        <img class="post-thumbnail" src="{{post.post_thumbnail.URL}}" alt="">
+        <h4 class="m-2">{{post.title}}</h4>
+        <span [innerHTML]="post.excerpt"></span>
+      </div>
+    </div>
   </div>
 </div>
