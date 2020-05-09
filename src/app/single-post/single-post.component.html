@@ -1,0 +1,22 @@
+<div class="single-post" *ngIf="isPostActive">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-12 m-4">
+        <h2>{{activePostData.title}}</h2>
+        <small class="float-left">{{activePostData.date | date}}</small>
+      </div>
+      <div class="col-md-12 post-content">
+        <p [innerHTML]="activePostData.content"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="float-left">Comments</h4>
+      </div>
+      <div class="col-md-11 comment text-left">
+        <h4>Nazwa użytkownika</h4>
+        <p>Kontent</p>
+      </div>
+    </div>
+  </div>
+</div>

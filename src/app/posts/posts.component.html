@@ -15,17 +15,18 @@
     <div *ngIf="postsLoading">
       Ładowanie
     </div>
+    <div *ngIf="postsLoading && error">
+      Wystąpił błąd podczas pobierania danych
+    </div>
     <div *ngIf="!postsLoading">
-      <div class="row">
-        <div class="m-2" *ngFor="let post of wordpressPosts.posts">
-          <div class="col-md-6 post offset-md-3" (click)="getSinglePost(post.ID)">
-            <img class="post-thumbnail" src="{{post.featured_image}}" alt="">
+      <div class="row" *ngFor="let post of wordpressPosts.posts" routerLink="/post/{{post.ID}}">
+          <div class="col-md-8 post offset-md-2">
+            <img class="post-thumbnail m-1" src="{{post.featured_image}}" alt="">
             <h4 class="m-2">{{post.title}}</h4>
             <span [innerHTML]="post.excerpt"></span>
           </div>
-        </div>
       </div>
     </div>
-    <app-single-post></app-single-post>
   </div>
 </div>
+
