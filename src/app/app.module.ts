@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostsComponent } from './posts/posts.component';
 import { SinglePostComponent } from './single-post/single-post.component';
-import {MatSliderModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -13,12 +12,11 @@ import {MatSliderModule} from '@angular/material';
     PostsComponent,
     SinglePostComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    MatSliderModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

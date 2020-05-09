@@ -26,10 +26,6 @@ export class PostsComponent implements OnInit {
         });
     }
 
-    getSinglePost(postId) {
-        this.singlePost.getPost(postId);
-    }
-
 
   ngOnInit() {
         this.getWPPosts();
