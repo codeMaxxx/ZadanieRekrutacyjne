@@ -1,7 +1,12 @@
 /*@import "../../../node_modules/bootstrap/scss/bootstrap.scss";*/
+.posts-bg {
+  background: linear-gradient(to right, rgba(86,128,233, .6), #C1C8E4, rgba(90,185,234, .6), #8860D0);
+  background-size: contain;
+  min-height: 100vh;
+}
 .post-thumbnail {
   height: 200px;
 }
 .post {
-
+  border: 1px solid #5AB9EA;
 }
