@@ -1,27 +1,36 @@
 # ZadanieRektutacyjne
+Zadanie rekrutacyjne zostało zbudowane na podstawie Angular 8 oraz Bootstrap4. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
 
-## Development server
+Dane pobierane były z Wordpress Api : https://developer.wordpress.com/docs/api/
+Docelowa strona : https://wordpress.com/blog/
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Na stronie głównej w zależności od statusu danych zostają wyświetlone 3 opcje : 
+- Komunikat o problemach z pobieraniem danych - w razie braku dostępu do danych
+- Ładowanie - w trakcie ładowania danych
+- Posty - Lista 5 postów ( ustawione w konfiguracji paginacji)
 
-## Code scaffolding
+Paginacja jest customowym rozwiązaniem.
+Wygląd strony został oparty o Bootstrap
+Dane były pobierane przy pomocy HttpClient wbudowanego w Angulara.
+Posty otwierają się w taki sposób, że z adresu strony zostaje pobierane ID posta, i z niego komentarze.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+-----------------------------------------------------------------------------------------
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+# Recruitment task
+Recruitment task was build od Angular 8 and Bootstrap 4
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Data was downloaded by Wordpress API : https://developer.wordpress.com/docs/api/
+Target size : https://wordpress.com/blog/
 
-## Running end-to-end tests
+On main page are three cases to display :
+- Alert about downloading data error - in case of no access to data,
+- Loading - in case of loading data,
+- Posts - list of 5 posts ( set in pagination configuration )
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Pagination is custom solution.
+Page view was build on Bootstrap
+Data was downloaded throught HttpClient build in Angular.
+Posts are opening by post ID in page adress, from the post with this ID comments are downloaded
