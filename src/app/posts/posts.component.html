@@ -31,7 +31,7 @@
       <div class="row">
         <div class="col-md-12">
           <h3>Wybierz stronę</h3>
-          <span class="m-3" *ngFor="let item of [].constructor(paginatorConfig.pages); let i = index" (click)="getPaginationPage(i+1, wordpressPosts)">{{i+1}}</span>
+          <button class="btn btn-primary m-3" [ngClass]="{'btn-secondary': i+1 === paginatorConfig.activePage, 'second': true, 'third': false}" *ngFor="let item of [].constructor(paginatorConfig.pages); let i = index" (click)="getPaginationPage(i+1, wordpressPosts)">{{i+1}}</button>
         </div>
       </div>
     </div>
