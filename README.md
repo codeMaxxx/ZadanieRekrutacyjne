@@ -23,7 +23,7 @@ Recruitment task was build od Angular 8 and Bootstrap 4
 
 
 Data was downloaded by Wordpress API : https://developer.wordpress.com/docs/api/
-Target size : https://wordpress.com/blog/
+Target site : https://wordpress.com/blog/
 
 On main page are three cases to display :
 - Alert about downloading data error - in case of no access to data,
