@@ -19,13 +19,20 @@
     </div>
     <div *ngIf="!postsLoading">
 
-      <div class="row" *ngFor="let post of wordpressPosts.posts">
+      <div class="row" *ngFor="let post of paginatorConfig.activePosts">
           <div class="col-md-8 post offset-md-2">
             <img class="post-thumbnail m-1" src="{{post.featured_image}}" alt="">
             <h4 class="m-2">{{post.title}}</h4>
             <span [innerHTML]="post.excerpt"></span>
             <button class="btn btn-primary m-2" routerLink="/post/{{post.ID}}">Read more</button>
           </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Wybierz stronę</h3>
+          <span class="m-3" *ngFor="let item of [].constructor(paginatorConfig.pages); let i = index" (click)="getPaginationPage(i+1, wordpressPosts)">{{i+1}}</span>
+        </div>
       </div>
     </div>
   </div>
